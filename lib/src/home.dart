@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: AnimalGaleria(),
+      home: AnimalGaleria(), /*En home asignamos la Galería de animales */
     );
   }
 }

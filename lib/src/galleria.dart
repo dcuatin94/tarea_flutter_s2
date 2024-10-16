@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/*
+  Esta clase permite mostrar una galería de animales
+  en forma de tarjetas
+ */
 class AnimalGaleria extends StatelessWidget {
   AnimalGaleria({super.key});
   final List<Map<String, String>> animals = [
@@ -15,12 +19,16 @@ class AnimalGaleria extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Zoológico"),
         ),
+        /*
+          GridView permite mostrar una galería de animales
+         */
         body: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
           itemCount: animals.length,
           itemBuilder: (context, index) {
+            // Card permite mostrar una tarjeta de animales
             return Card(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -28,8 +36,12 @@ class AnimalGaleria extends StatelessWidget {
                   Expanded(
                       child: Image.asset(
                     animals[index]["image"]!,
-                    fit: BoxFit.cover,
+                    fit: BoxFit
+                        .cover, //BoxFit.cover ajusta la imagen al tamaño de la tarjeta
                   )),
+                  /*
+                    Padding permite agregar un margen alrededor de un widget
+                   */
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
